@@ -20,7 +20,7 @@ const createUser = asyncHandler( async (req,res)=> {
             if(data){
                 res.send(data)
             }
-        }).catch(err=>console.log(err))
+        }).catch(err=>res.status(400).send(err))
     }
     else{
         res.json({
@@ -51,7 +51,7 @@ const loginUserControll = asyncHandler(async(req,res) =>{
     }
     else{
         
-          res.json({msg:"invalid credentials"})
+          res.json({msg:"invalid credentials provided"})
     }
 })
 const getAllUsers = asyncHandler(async(req,res)=>{

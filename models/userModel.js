@@ -56,6 +56,14 @@ schema.pre('save',async function (next) {
 const salt = await bcrypt.genSaltSync(10);
 this.password = await bcrypt.hash(this.password,salt)
 })
+schema.pre('validate',function(next) {
+    return new Promise((resolve,rejet) =>{
+        if(this.mobileNo?.length!==10) {
+            return rejet('mobileNo should be 10 digits')
+        }
+        return resolve();
+    })
+})
 schema.methods.isPasswordMatched = async function(enterdpassword){
     return await bcrypt.compare(enterdpassword,this.password);
 
