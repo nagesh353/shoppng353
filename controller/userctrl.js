@@ -98,7 +98,7 @@ const handleRefreshToken = async (req,res) =>{
     const cookie = req.cookies;
     console.log(cookie)
     if(!cookie?.refreshToken){
-        throw new Error('no refresh token')
+        throw new Error(' there is no refresh token')
     }
     const refreshToken = cookie.refreshToken;
     const data = await user.findOne({refreshToken})
