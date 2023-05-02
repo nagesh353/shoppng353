@@ -67,7 +67,7 @@ const getUser = asyncHandler(async(req,res) =>{
     res.json(data);
     }
     else{
-        res.json({result:"user not found"})
+        res.json({result:"user not fnd"})
     }
 })
 const deleteUser = asyncHandler(async(req,res) => {
