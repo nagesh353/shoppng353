@@ -15,13 +15,13 @@ const middleware = asyncHandler(async(req,res,next) => {
 
         }
         catch(err){
-            throw new Error(' token expied please login')
+            throw new Error(' token expied please login');
 
         }
 
     }
     else{
-        throw new Error('no token attached in headers')
+        throw new Error('no token attached in headers');
     }
 
 })
