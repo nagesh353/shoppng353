@@ -14,7 +14,7 @@ let schema = new mongoose.Schema({
         trim:true,
         unique: true
     },
-    email:{
+    emailId:{
         type:String,
         required: true,
         unique: true
@@ -62,5 +62,5 @@ schema.methods.isPasswordMatched = async function(enterdpassword){
 }
 
 schema.set('timestamps', true);
-schema.index({email:1},{name:1})
+schema.index({emailId:1},{name:1})
 module.exports =  mongoose.model('user',schema);
