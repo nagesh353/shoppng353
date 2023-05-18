@@ -15,7 +15,7 @@ const middleware = asyncHandler(async(req,res,next) => {
 
         }
         catch(err){
-            throw new Error('un authorized token expied please login')
+            throw new Error(' token expied please login')
 
         }
 
