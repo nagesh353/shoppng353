@@ -28,8 +28,8 @@ const middleware = asyncHandler(async(req,res,next) => {
 const isAdmin = asyncHandler(async(req,res,next) =>{
     const {email} = req.userData;
     const adminUser = await user.findOne({email:email});
-    if(adminUser.role !== 'Admin'){
-        res.send({msg:`user is not a Admin ${adminUser.name}`})
+    if(adminUser.role !== 'Admin') {
+        res.send({msg:`user is not a Admin ${adminUser.name}`});
 
     }
     else{
